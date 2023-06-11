@@ -214,8 +214,8 @@
 											<span class="menu-title">MU Schedule</span>
 										</a>
 									</div>
-									<div class="menu-item">
-										<a href="../../demo27/dist/apps/projects/project.html" class="menu-link">
+									<div class="menu-item <?php if(route('user')  == url()->full()){ echo'here show'; } ?>">
+										<a href="{{ route('user') }}" class="menu-link">
 											<span class="menu-icon">
 												<i class="ki-outline ki-user fs-2"></i>
 											</span>

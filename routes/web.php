@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BDRSController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\JadwalMUController;
 use App\Http\Controllers\BloodStockController;
 
@@ -32,3 +33,8 @@ Route::get('/jadwal', [JadwalMUController::class, 'index'])->name('jadwalmu');
 Route::post('/jadwal/add', [JadwalMUController::class, 'add'])->name('jadwalmu_add');
 Route::get('/jadwal/delete/{id}', [JadwalMUController::class, 'delete'])->name('jadwalmu_delete');
 Route::post('/jadwal/update', [JadwalMUController::class, 'update'])->name('jadwalmu_update');
+
+Route::get('/user', [UserController::class, 'index'])->name('user');
+Route::post('/user/update', [UserController::class, 'update'])->name('user_update');
+Route::get('/user/delete/{id}', [UserController::class, 'delete'])->name('user_delete');
+
