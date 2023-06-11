@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BDRSController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BloodStockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,6 @@ Route::get('/bdrs', [BDRSController::class, 'index'])->name('bdrs');
 Route::post('/bdrs/add', [BDRSController::class, 'add'])->name('bdrs_add');
 Route::get('/bdrs/delete/{id}', [BDRSController::class, 'delete'])->name('bdrs_delete');
 Route::post('/bdrs/update', [BDRSController::class, 'update'])->name('bdrs_update');
+
+Route::get('/stock', [BloodStockController::class, 'index'])->name('bloodstock');
+Route::post('/stock/add', [BloodStockController::class, 'add'])->name('bloodstock_add');
