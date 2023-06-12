@@ -23,6 +23,7 @@ use App\Http\Controllers\BloodStockController;
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/request/pending', [RequestController::class, 'pending'])->name('pending');
+Route::get('/request/show', [RequestController::class, 'show'])->name('show');
 Route::get('/request/delete/{id}', [RequestController::class, 'delete'])->name('pending_delete');
 Route::get('/request/approve/{id}', [RequestController::class, 'approve'])->name('pending_approve');
 

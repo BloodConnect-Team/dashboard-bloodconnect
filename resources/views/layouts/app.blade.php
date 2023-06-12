@@ -48,7 +48,7 @@
 							<div class="btn btn-icon btn-active-color-primary w-35px h-35px me-2" id="kt_app_sidebar_mobile_toggle">
 								<i class="ki-outline ki-abstract-14 fs-2"></i>
 							</div>
-							<a href="../../demo27/dist/index.html">
+							<a href="{{ route('home') }}">
 								<img alt="Logo" src="{{ asset('assets/media/icon.svg') }}" class="h-30px theme-light-show" />
 								<img alt="Logo" src="{{ asset('assets/media/icon.svg') }}" class="h-30px theme-dark-show" />
 							</a>
@@ -113,7 +113,7 @@
 						<div class="app-sidebar-header d-none d-lg-flex px-0 pt-10 pb-0" id="kt_app_sidebar_header">
 							<div data-kt-element="selected" class="w-100">
 								<span class="d-flex flex-start ms-5">
-									<img  alt="Logo" src="{{ asset('assets/media/icon.svg') }}" data-kt-element="logo" class="h-50px" />
+									<img  alt="Logo" src="{{ asset('assets/media/icon.svg') }}" data-kt-element="logo" class="h-40px" />
 								</span>
 							</div>
 						</div>
@@ -136,7 +136,7 @@
 											<span class="menu-title">Home</span>
 										</a>
 									</div>
-									<div data-kt-menu-trigger="click" class="menu-item menu-accordion <?php if(route('pending')  == url()->full()){ echo'here show'; } ?>">
+									<div data-kt-menu-trigger="click" class="menu-item menu-accordion <?php if((route('pending')  == url()->full()) OR (route('show')  == url()->full())){ echo'here show'; } ?>">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<i class="ki-outline ki-pulse fs-2"></i>
@@ -153,7 +153,7 @@
 													<span class="menu-title">Pending</span>
 												</span>
 											</a>
-                      <a href="" class="menu-item menu-accordion">
+                      <a href="{{ route('show') }}" class="menu-item menu-accordion <?php if(route('show')  == url()->full()){ echo'here show'; } ?>">
 												<span class="menu-link">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
@@ -228,13 +228,13 @@
 						<div class="app-sidebar-footer d-flex flex-stack px-11 pb-10" id="kt_app_sidebar_footer">
 							<div class="">
 								<div class="cursor-pointer symbol symbol-circle symbol-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-overflow="true" data-kt-menu-placement="top-start">
-									<img src="assets/media/avatars/300-2.jpg" alt="image" />
+									<img src="{{ asset('assets/media/avatars/300-2.jpg') }}" alt="image" />
 								</div>
 								<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
 									<div class="menu-item px-3">
 										<div class="menu-content d-flex align-items-center px-3">
 											<div class="symbol symbol-50px me-5">
-												<img alt="Logo" src="assets/media/avatars/300-2.jpg" />
+												<img alt="Logo" src="{{ asset('assets/media/avatars/300-2.jpg') }}" />
 											</div>
 											<div class="d-flex flex-column">
 												<div class="fw-bold d-flex align-items-center fs-5">Alice Page
