@@ -1,14 +1,8 @@
 @extends('layouts.auth')
 
-@section('pageTitle', 'Lupa Kata Sandi')
-
-@section('style')
-    <!-- CSS Libraries -->
-@endsection
-
 @section('content')
 
-<form class="form w-100" novalidate="novalidate" id="kt_password_reset_form" action="{{ route('password.email') }}" method="POST">
+<form class="form w-100" novalidate="novalidate" id="kt_password_reset_form" action="{{ route('forgot_submit') }}" method="POST">
     @csrf
     <div class="text-center mb-10">
         <h1 class="text-dark fw-bolder mb-3">Forgot Password ?</h1>
