@@ -19,12 +19,9 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
         if (Auth::attempt($credentials)) {
             return redirect()->intended('/home');
         }
-
-        // Authentication failed
         return redirect()->back()->withErrors(['email' => 'Invalid email or password.']);
     }
 
