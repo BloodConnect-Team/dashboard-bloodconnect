@@ -49,8 +49,8 @@
 								<i class="ki-outline ki-abstract-14 fs-2"></i>
 							</div>
 							<a href="../../demo27/dist/index.html">
-								<img alt="Logo" src="assets/media/logos/default-small.svg" class="h-30px theme-light-show" />
-								<img alt="Logo" src="assets/media/logos/default-small-dark.svg" class="h-30px theme-dark-show" />
+								<img alt="Logo" src="{{ asset('assets/media/icon.svg') }}" class="h-30px theme-light-show" />
+								<img alt="Logo" src="{{ asset('assets/media/icon.svg') }}" class="h-30px theme-dark-show" />
 							</a>
 						</div>
 						<div class="d-flex flex-stack flex-lg-row-fluid" id="kt_app_header_wrapper">
@@ -110,10 +110,10 @@
 				</div>
 				<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
 					<div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
-						<div class="app-sidebar-header d-none d-lg-flex px-6 pt-8 pb-4" id="kt_app_sidebar_header">
+						<div class="app-sidebar-header d-none d-lg-flex px-0 pt-10 pb-0" id="kt_app_sidebar_header">
 							<div data-kt-element="selected" class="w-100">
-								<span class="d-flex flex-center flex-shrink-0 w-40px me-3">
-									<img alt="Logo" src="assets/media/logos/default-small.svg" data-kt-element="logo" class="h-30px" />
+								<span class="d-flex flex-start ms-5">
+									<img  alt="Logo" src="{{ asset('assets/media/icon.svg') }}" data-kt-element="logo" class="h-50px" />
 								</span>
 							</div>
 						</div>
@@ -136,7 +136,7 @@
 											<span class="menu-title">Home</span>
 										</a>
 									</div>
-									<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+									<div data-kt-menu-trigger="click" class="menu-item menu-accordion <?php if(route('pending')  == url()->full()){ echo'here show'; } ?>">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<i class="ki-outline ki-pulse fs-2"></i>
@@ -145,7 +145,7 @@
 											<span class="menu-arrow"></span>
 										</span>
 										<div class="menu-sub menu-sub-accordion">
-											<a href="" class="menu-item menu-accordion">
+											<a href="{{ route('pending') }}" class="menu-item menu-accordion <?php if(route('pending')  == url()->full()){ echo'here show'; } ?>">
 												<span class="menu-link">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>

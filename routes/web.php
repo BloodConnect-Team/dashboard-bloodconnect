@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BDRSController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RequestController;
 use App\Http\Controllers\JadwalMUController;
 use App\Http\Controllers\BloodStockController;
 
@@ -20,6 +21,10 @@ use App\Http\Controllers\BloodStockController;
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/request/pending', [RequestController::class, 'pending'])->name('pending');
+Route::get('/request/delete/{id}', [RequestController::class, 'delete'])->name('pending_delete');
+Route::get('/request/approve/{id}', [RequestController::class, 'approve'])->name('pending_approve');
 
 Route::get('/bdrs', [BDRSController::class, 'index'])->name('bdrs');
 Route::post('/bdrs/add', [BDRSController::class, 'add'])->name('bdrs_add');
