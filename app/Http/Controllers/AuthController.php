@@ -31,6 +31,18 @@ class AuthController extends Controller
         return view('auth.email', compact('data'));
     }
 
+    public function submitForgot(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('/home');
+        }
+        return redirect()->back()->withErrors(['email' => 'Invalid email or password.']);
+    }
+
     public function logout(){
         Auth::logout();
         return redirect()->route('login');

@@ -25,6 +25,8 @@ Route::post('/submit', [AuthController::class, 'submit'])->name('submit');
 Route::get('/forgot', [AuthController::class, 'forgot'])->name('forgot');
 Route::post('/forgot/submit', [AuthController::class, 'submitForgot'])->name('forgot_submit');
 
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/request/pending', [RequestController::class, 'pending'])->name('pending');

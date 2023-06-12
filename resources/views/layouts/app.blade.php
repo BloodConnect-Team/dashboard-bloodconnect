@@ -226,18 +226,18 @@
 						<div class="app-sidebar-footer d-flex flex-stack px-11 pb-10" id="kt_app_sidebar_footer">
 							<div class="">
 								<div class="cursor-pointer symbol symbol-circle symbol-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-overflow="true" data-kt-menu-placement="top-start">
-									<img src="{{ asset('assets/media/avatars/300-2.jpg') }}" alt="image" />
+									<img src="{{Auth::user()->photo}}" alt="image" />
 								</div>
 								<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
 									<div class="menu-item px-3">
 										<div class="menu-content d-flex align-items-center px-3">
 											<div class="symbol symbol-50px me-5">
-												<img alt="Logo" src="{{ asset('assets/media/avatars/300-2.jpg') }}" />
+												<img alt="Logo" src="{{Auth::user()->photo}}" />
 											</div>
 											<div class="d-flex flex-column">
-												<div class="fw-bold d-flex align-items-center fs-5">Alice Page
-												<span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span></div>
-												<a href="#" class="fw-semibold text-muted text-hover-primary fs-7">max@kt.com</a>
+												<div class="fw-bold d-flex align-items-center fs-5">{{Auth::user()->name}}
+												<span class="badge badge-light-danger fw-bold fs-8 px-2 py-1 ms-2">{{Auth::user()->goldar}}</span></div>
+												<a href="#" class="fw-semibold text-muted text-hover-primary fs-7">{{Auth::user()->email}}</a>
 											</div>
 										</div>
 									</div>
@@ -246,11 +246,11 @@
 										<a href="../../demo27/dist/account/overview.html" class="menu-link px-5">My Profile</a>
 									</div>
 									<div class="menu-item px-5">
-										<a href="../../demo27/dist/authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign Out</a>
+										<a href="{{ route('logout') }}" class="menu-link px-5">Sign Out</a>
 									</div>
 								</div>
 							</div>
-							<a href="../../demo27/dist/authentication/layouts/corporate/sign-in.html" class="btn btn-sm btn-outline btn-flex btn-custom px-3">
+							<a href="{{ route('logout') }}" class="btn btn-sm btn-outline btn-flex btn-custom px-3">
 							<i class="ki-outline ki-entrance-left fs-2 me-2"></i>Logout</a>
 						</div>
 					</div>
