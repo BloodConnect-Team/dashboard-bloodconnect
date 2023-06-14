@@ -4,7 +4,8 @@
 
 <form class="form w-100" novalidate="novalidate" id="kt_password_reset_form" action="{{ route('forgot_submit') }}" method="POST">
     @csrf
-    <div class="text-center mb-10">
+    <div class="mb-10">
+        <img class="theme-light-show mx-auto mw-100 w-150px w-lg-200px mb-10 " src="{{ asset('assets/media/bcpmi.png') }}" alt="" />
         <h1 class="text-dark fw-bolder mb-3">Forgot Password ?</h1>
         <div class="text-gray-500 fw-semibold fs-6">Enter your email to reset your password.</div>
     </div>
