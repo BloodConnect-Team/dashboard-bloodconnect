@@ -40,10 +40,8 @@
 				<div class="d-flex flex-column flex-lg-row flex-column-fluid">
 					<div class="d-flex flex-lg-row-fluid">
 						<div class="d-flex flex-column flex-center pb-0 pb-lg-10 p-10 w-100">
-							<img class="theme-light-show mx-auto mw-100 w-150px w-lg-400px mb-10 mb-lg-20" src="{{ asset('assets/media/logo.png') }}" alt="" />
-							<img class="theme-dark-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20" src="{{ asset('assets/media/logo.png') }}" alt="" />
-							<h1 class="text-gray-800 fs-2qx fw-bold text-center mb-2">BloodConnect</h1>
-							<div class="text-danger fs-base text-center fs-3	 fw-semibold">Connected for a life</div>
+							<img class="theme-light-show mx-auto mw-100 w-150px w-lg-700px mb-10 mb-lg-20" src="{{ asset('assets/media/blood.png') }}" alt="" />
+							<img class="theme-dark-show mx-auto mw-100 w-150px w-lg-700px mb-10 mb-lg-20" src="{{ asset('assets/media/blood.png') }}" alt="" />
 						</div>
 					</div>
 					<div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12">
