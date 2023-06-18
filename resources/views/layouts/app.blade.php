@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head><base href="./"/>
-		<title>BloodConnect &mdash; {{$data['title']}}</title>
+		<title>BloodConnect &mdash; 
+		@if (empty($data['title']))
+				404
+		@else
+			{{$data['title']}}
+		@endif
+		</title>
 		<meta charset="utf-8" />
-		<meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
-		<meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
+		<meta name="description" content="Dashboard for admin BloodConnect" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Metronic - Bootstrap Admin Template, HTML, VueJS, React, Angular. Laravel, Asp.Net Core, Ruby on Rails, Spring Boot, Blazor, Django, Express.js, Node.js, Flask Admin Dashboard Theme & Template" />
-		<meta property="og:url" content="https://keenthemes.com/metronic" />
-		<meta property="og:site_name" content="Keenthemes | Metronic" />
-		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<meta property="og:title" content="BloodConnect &mdash; {{$data['title']}}" />
+		<meta property="og:url" content="{{url()->full()}}" />
+		<meta property="og:site_name" content="BloodConnect &mdash; {{$data['title']}}" />
+		<meta property="og:image" content="{{ asset('assets/media/banner.png') }}" />
+		<link rel="shortcut icon" href="{{ asset('assets/media/logo.png') }}" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 		<link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -62,9 +68,21 @@
 									<li class="breadcrumb-item">
 										<i class="ki-outline ki-right fs-7 text-gray-700 mx-n1"></i>
 									</li>
-									<li class="breadcrumb-item text-gray-600 fw-bold lh-1">{{$data['title']}}</li>
+									<li class="breadcrumb-item text-gray-600 fw-bold lh-1">
+										@if (empty($data['title']))
+										404
+										@else
+											{{$data['title']}}
+										@endif	
+									</li>
 								</ul>
-								<h1 class="text-gray-900 fw-bolder m-0">{{$data['title']}}</h1>
+								<h1 class="text-gray-900 fw-bolder m-0">
+									@if (empty($data['title']))
+									404
+									@else
+										{{$data['title']}}
+									@endif	
+								</h1>
 							</div>
 							<div class="d-flex align-items-center gap-2 gapl-lg-4">
 								<div class="m-0">
@@ -161,7 +179,7 @@
 											</a>
 										</div>
 									</div>
-									<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+									<div data-kt-menu-trigger="click" class="menu-item menu-accordion <?php if((route('news')  == url()->full()) OR (route('news_add')  == url()->full())){ echo'here show'; } ?>">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<i class="ki-outline ki-save-2 fs-2"></i>
@@ -170,20 +188,20 @@
 											<span class="menu-arrow"></span>
 										</span>
 										<div class="menu-sub menu-sub-accordion">
-											<a href="" class="menu-item menu-accordion">
+											<a href="{{ route('news_add') }}" class="menu-item menu-accordion <?php if(route('news_add')  == url()->full()){ echo'here show'; } ?>">
 												<span class="menu-link">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">Pending</span>
+													<span class="menu-title">Add New</span>
 												</span>
 											</a>
-                      <a href="" class="menu-item menu-accordion">
+                      <a href="{{ route('news') }}" class="menu-item menu-accordion <?php if(route('news')  == url()->full()){ echo'here show'; } ?>">
 												<span class="menu-link">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">Show</span>
+													<span class="menu-title">Publish</span>
 												</span>
 											</a>
 										</div>
@@ -243,7 +261,7 @@
 									</div>
 									<div class="separator my-2"></div>
 									<div class="menu-item px-5">
-										<a href="../../demo27/dist/account/overview.html" class="menu-link px-5">My Profile</a>
+										<a href="{{ route('account') }}" class="menu-link px-5">My Profile</a>
 									</div>
 									<div class="menu-item px-5">
 										<a href="{{ route('logout') }}" class="menu-link px-5">Sign Out</a>
@@ -264,14 +282,14 @@
                 <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
                   <div class="text-dark order-2 order-md-1">
                     <span class="text-muted fw-semibold me-1">2023&copy;</span>
-                    <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+                    <a href="https://gariskode.com" target="_blank" class="text-gray-800 text-hover-primary">GarisKode Team</a>
                   </div>
                   <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
                     <li class="menu-item">
-                      <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">Panduan Pengguna</a>
+                      <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">User Guide</a>
                     </li>
                     <li class="menu-item">
-                      <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Kebijakan Privasi</a>
+                      <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Privacy Policy</a>
                     </li>
                   </ul>
                 </div>
@@ -297,6 +315,34 @@
 			@if (session('success'))
 			<script>
 					Swal.fire({ text: '{{ session("success") }}', icon: "success", buttonsStyling: !1, confirmButtonText: "Ok, got it!", customClass: { confirmButton: "btn btn-primary" } });
+			</script>	
+			@endif
+
+			@if (session('error'))
+			<script>
+					Swal.fire({ text: '{{ session("error") }}', icon: "error", buttonsStyling: !1, confirmButtonText: "Ok, got it!", customClass: { confirmButton: "btn btn-primary" } });
+			</script>	
+			@endif
+
+			@if (session('msg'))
+			<script>
+					Swal.fire({
+            text: '{{ session("msg") }}',
+            icon: "warning",
+            showCancelButton: !0,
+            buttonsStyling: !1,
+            confirmButtonText: "Yes, login again!",
+            cancelButtonText: "No, return",
+						closeOnConfirm: false,
+   					closeOnCancel: false,
+            customClass: { confirmButton: "btn btn-primary", cancelButton: "btn btn-active-light" },
+          }).then(function (isConfirm) {
+							if (isConfirm.value){
+								window.location.href = "/logout";
+							} else {
+                Swal.fire({ text: "Your action has been cancelled!.", icon: "error", buttonsStyling: !1, confirmButtonText: "Ok, got it!", customClass: { confirmButton: "btn btn-primary" } });
+   						}
+          });
 			</script>	
 			@endif
 

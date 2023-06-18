@@ -9,16 +9,13 @@
             <div class="row g-5 g-xl-10">
 
               <div class="card">
-                <div class="card-header border-0 pt-6">
+                <div class="card-header pt-6">
                   <div class="card-title">
-                    <div class="d-flex align-items-center position-relative my-1">
-                      <i class="ki-outline ki-magnifier fs-3 position-absolute ms-5"></i>
-                      <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-13" placeholder="Search BDRS" />
-                    </div>
+                    <span>MU Schedule</span>
                   </div>
                   <div class="card-toolbar">
                     <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
+                      <button type="button" class="btn btn-danger mb-3" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
                       <i class="ki-outline ki-plus fs-2"></i>Add Schedule</button>
                     </div>
                     <div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">

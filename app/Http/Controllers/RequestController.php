@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class RequestController extends Controller
 {
@@ -39,6 +40,18 @@ class RequestController extends Controller
 
     public function approve($id)
     {
+        $user = DB::table('requests')        
+        ->join('users', 'requests.user_id', '=', 'users.id')
+        ->where('id_requests', $id)->first();
+        // dd($user);
+        Mail::send('email.verify', ['slug' => $user->requests_slug], function($message) use($user){
+            $message->to($user->email);
+            $message->subject('Notification');
+        });
+        DB::table('notifications')->insert([
+            'message' => 'Permintaan anda telah berhasil diverifikasi.',
+            'user_id' => $user->user_id
+        ]);
         DB::table('requests')->where('id_requests', $id)->update([
             'requests_status' => '1',
         ]);

@@ -3,16 +3,15 @@
 	<head><base href=""/>
 		<title>BloodConnect &mdash; {{$data['title']}}</title>
 		<meta charset="utf-8" />
-		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Flask & Laravel versions. Grab your copy now and get life-time updates for free." />
-		<meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Flask & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
+		<meta name="description" content="Dashboard for admin BloodConnect" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Metronic | Bootstrap HTML, VueJS, React, Angular, Asp.Net Core, Rails, Spring, Blazor, Django, Flask & Laravel Admin Dashboard Theme" />
-		<meta property="og:url" content="https://keenthemes.com/metronic" />
-		<meta property="og:site_name" content="Keenthemes | Metronic" />
-		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-		<link rel="shortcut icon" href="{{ asset('assets/media/logos/favicon.ico') }}" />
+		<meta property="og:title" content="BloodConnect &mdash; {{$data['title']}}" />
+		<meta property="og:url" content="{{url()->full()}}" />
+		<meta property="og:site_name" content="BloodConnect &mdash; {{$data['title']}}" />
+		<meta property="og:image" content="{{ asset('assets/media/banner.png') }}" />
+		<link rel="shortcut icon" href="{{ asset('assets/media/logo.png') }}" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 		<link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -38,10 +37,10 @@
 			<div class="d-flex flex-column flex-root" id="kt_app_root">
 				<style>body { background-image: url('{{ asset("assets/media/auth/bg10.jpeg") }}'); } [data-bs-theme="dark"] body { background-image: url('{{ asset("assets/media/auth/bg10-dark.jpeg") }}'); }</style>
 				<div class="d-flex flex-column flex-lg-row flex-column-fluid">
-					<div class="d-flex flex-lg-row-fluid">
-						<div class="d-flex flex-column flex-center pb-0 pb-lg-10 p-10 w-100">
-							<img class="theme-light-show mx-auto mw-100 w-150px w-lg-700px mb-10 mb-lg-20" src="{{ asset('assets/media/blood.png') }}" alt="" />
-							<img class="theme-dark-show mx-auto mw-100 w-150px w-lg-700px mb-10 mb-lg-20" src="{{ asset('assets/media/blood.png') }}" alt="" />
+					<div class="d-flex flex-lg-row-fluid ">
+						<div class="d-flex flex-column flex-center pb-0 pb-lg-10 p-10 w-100 ">
+							<img class="theme-light-show mx-auto mw-100 w-150px w-lg-700px mb-10 mb-lg-20 d-none d-sm-block" src="{{ asset('assets/media/blood.png') }}" alt="" />
+							<img class="theme-dark-show mx-auto mw-100 w-150px w-lg-700px mb-10 mb-lg-20 d-none d-sm-block" src="{{ asset('assets/media/blood.png') }}" alt="" />
 						</div>
 					</div>
 					<div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12">
@@ -54,8 +53,8 @@
 								</div>
 									<div class="d-flex flex-stack justify-content-center text-center">
 										<div class="d-flex justify-content-center text-center fw-semibold text-primary fs-base gap-5">
-											<a class="text-danger" href="../../demo29/dist/pages/team.html" target="_blank">Panduan Pengguna</a>
-											<a class="text-danger" href="../../demo29/dist/pages/pricing/column.html" target="_blank">Kebijakan Privasi</a>
+											<a class="text-danger" href="../../demo29/dist/pages/team.html" target="_blank">User Guide</a>
+											<a class="text-danger" href="../../demo29/dist/pages/pricing/column.html" target="_blank">Privacy Policy</a>
 										</div>
 									</div>
 								</div>
@@ -67,6 +66,8 @@
 		<script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
 		<script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
         @yield('script')
+
+
 	</body>
 </html>
 
