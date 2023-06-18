@@ -35,7 +35,7 @@
                                       <div class="d-flex flex-wrap">
                                           <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                                               <div class="d-flex align-items-center">
-                                                  <div class="fs-2 fw-bold counted" data-kt-countup="true" data-kt-countup-value="4500" data-kt-countup-prefix="$" data-kt-initialized="1">O+</div>
+                                                  <div class="fs-2 fw-bold counted" data-kt-countup="true" data-kt-countup-value="4500" data-kt-countup-prefix="$" data-kt-initialized="1">{{Auth::user()->goldar}}</div>
                                               </div>
                                               <div class="fw-semibold fs-6 text-gray-400">Blood Type</div>
                                           </div>
