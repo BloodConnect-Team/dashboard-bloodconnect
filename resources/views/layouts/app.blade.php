@@ -300,6 +300,34 @@
 			</script>	
 			@endif
 
+			@if (session('error'))
+			<script>
+					Swal.fire({ text: '{{ session("error") }}', icon: "error", buttonsStyling: !1, confirmButtonText: "Ok, got it!", customClass: { confirmButton: "btn btn-primary" } });
+			</script>	
+			@endif
+
+			@if (session('msg'))
+			<script>
+					Swal.fire({
+            text: '{{ session("msg") }}',
+            icon: "warning",
+            showCancelButton: !0,
+            buttonsStyling: !1,
+            confirmButtonText: "Yes, login again!",
+            cancelButtonText: "No, return",
+						closeOnConfirm: false,
+   					closeOnCancel: false,
+            customClass: { confirmButton: "btn btn-primary", cancelButton: "btn btn-active-light" },
+          }).then(function (isConfirm) {
+							if (isConfirm.value){
+								window.location.href = "/logout";
+							} else {
+                Swal.fire({ text: "Your action has been cancelled!.", icon: "error", buttonsStyling: !1, confirmButtonText: "Ok, got it!", customClass: { confirmButton: "btn btn-primary" } });
+   						}
+          });
+			</script>	
+			@endif
+
 			<script>
 				function confirmButtonText(link) {
 					Swal.fire({

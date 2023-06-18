@@ -57,6 +57,9 @@ Route::get('/news/edit/{id}', [NewsController::class, 'edit'])->name('news_eddit
 Route::post('/news/update', [NewsController::class, 'update'])->name('news_update')->middleware('auth');
 
 Route::get('/account', [AccountController::class, 'index'])->name('account')->middleware('auth');
+Route::get('/account/edit', [AccountController::class, 'edit'])->name('account_edit')->middleware('auth');
+Route::post('/account/update', [AccountController::class, 'update'])->name('account_update')->middleware('auth');
+Route::post('/account/change', [AccountController::class, 'password_change'])->name('password_change')->middleware('auth');
 
 Route::get('/user', [UserController::class, 'index'])->name('user')->middleware('auth');
 Route::post('/user/update', [UserController::class, 'update'])->name('user_update')->middleware('auth');

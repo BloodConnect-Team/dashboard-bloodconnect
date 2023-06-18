@@ -52,7 +52,7 @@
                       <div class="card-title m-0">
                           <h3 class="fw-bold m-0">Profile Details</h3>
                       </div>
-                      <a href="/metronic8/demo27/../demo27/account/settings.html" class="btn btn-sm btn-primary align-self-center">Edit Profile</a>   
+                      <a href="{{ route('account_edit') }}" class="btn btn-sm btn-primary align-self-center">Edit Profile</a>   
                   </div>
                   <div class="card-body p-9">
                       <div class="row mb-7">
