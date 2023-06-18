@@ -4,7 +4,8 @@
 
 <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form"  action="{{ route('submit') }}" method="POST" >
     @csrf
-    <div class="text-center mb-11">
+    <div class="mb-11">
+        <img class="theme-light-show mx-auto mw-100 w-150px w-lg-200px mb-10 " src="{{ asset('assets/media/bcpmi.png') }}" alt="" />
         <h1 class="text-dark fw-bolder mb-3">Sign In</h1>
         <div class="text-gray-500 fw-semibold fs-6">Enter your email and password</div>
     </div>

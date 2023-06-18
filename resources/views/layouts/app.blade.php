@@ -3,15 +3,15 @@
 	<head><base href="./"/>
 		<title>BloodConnect &mdash; {{$data['title']}}</title>
 		<meta charset="utf-8" />
-		<meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
-		<meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
+		<meta name="description" content="Dashboard for admin BloodConnect" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Metronic - Bootstrap Admin Template, HTML, VueJS, React, Angular. Laravel, Asp.Net Core, Ruby on Rails, Spring Boot, Blazor, Django, Express.js, Node.js, Flask Admin Dashboard Theme & Template" />
-		<meta property="og:url" content="https://keenthemes.com/metronic" />
-		<meta property="og:site_name" content="Keenthemes | Metronic" />
-		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<meta property="og:title" content="BloodConnect &mdash; {{$data['title']}}" />
+		<meta property="og:url" content="{{url()->full()}}" />
+		<meta property="og:site_name" content="BloodConnect &mdash; {{$data['title']}}" />
+		<meta property="og:image" content="{{ asset('assets/media/banner.png') }}" />
+		<link rel="shortcut icon" href="{{ asset('assets/media/logo.png') }}" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 		<link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -161,7 +161,7 @@
 											</a>
 										</div>
 									</div>
-									<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+									<div data-kt-menu-trigger="click" class="menu-item menu-accordion <?php if((route('news')  == url()->full()) OR (route('news_add')  == url()->full())){ echo'here show'; } ?>">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<i class="ki-outline ki-save-2 fs-2"></i>
@@ -170,20 +170,20 @@
 											<span class="menu-arrow"></span>
 										</span>
 										<div class="menu-sub menu-sub-accordion">
-											<a href="" class="menu-item menu-accordion">
+											<a href="{{ route('news_add') }}" class="menu-item menu-accordion <?php if(route('news_add')  == url()->full()){ echo'here show'; } ?>">
 												<span class="menu-link">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">Pending</span>
+													<span class="menu-title">Add New</span>
 												</span>
 											</a>
-                      <a href="" class="menu-item menu-accordion">
+                      <a href="{{ route('news') }}" class="menu-item menu-accordion <?php if(route('news')  == url()->full()){ echo'here show'; } ?>">
 												<span class="menu-link">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">Show</span>
+													<span class="menu-title">Publish</span>
 												</span>
 											</a>
 										</div>
@@ -226,31 +226,31 @@
 						<div class="app-sidebar-footer d-flex flex-stack px-11 pb-10" id="kt_app_sidebar_footer">
 							<div class="">
 								<div class="cursor-pointer symbol symbol-circle symbol-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-overflow="true" data-kt-menu-placement="top-start">
-									<img src="{{ asset('assets/media/avatars/300-2.jpg') }}" alt="image" />
+									<img src="{{Auth::user()->photo}}" alt="image" />
 								</div>
 								<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
 									<div class="menu-item px-3">
 										<div class="menu-content d-flex align-items-center px-3">
 											<div class="symbol symbol-50px me-5">
-												<img alt="Logo" src="{{ asset('assets/media/avatars/300-2.jpg') }}" />
+												<img alt="Logo" src="{{Auth::user()->photo}}" />
 											</div>
 											<div class="d-flex flex-column">
-												<div class="fw-bold d-flex align-items-center fs-5">Alice Page
-												<span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span></div>
-												<a href="#" class="fw-semibold text-muted text-hover-primary fs-7">max@kt.com</a>
+												<div class="fw-bold d-flex align-items-center fs-5">{{Auth::user()->name}}
+												<span class="badge badge-light-danger fw-bold fs-8 px-2 py-1 ms-2">{{Auth::user()->goldar}}</span></div>
+												<a href="#" class="fw-semibold text-muted text-hover-primary fs-7">{{Auth::user()->email}}</a>
 											</div>
 										</div>
 									</div>
 									<div class="separator my-2"></div>
 									<div class="menu-item px-5">
-										<a href="../../demo27/dist/account/overview.html" class="menu-link px-5">My Profile</a>
+										<a href="{{ route('account') }}" class="menu-link px-5">My Profile</a>
 									</div>
 									<div class="menu-item px-5">
-										<a href="../../demo27/dist/authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign Out</a>
+										<a href="{{ route('logout') }}" class="menu-link px-5">Sign Out</a>
 									</div>
 								</div>
 							</div>
-							<a href="../../demo27/dist/authentication/layouts/corporate/sign-in.html" class="btn btn-sm btn-outline btn-flex btn-custom px-3">
+							<a href="{{ route('logout') }}" class="btn btn-sm btn-outline btn-flex btn-custom px-3">
 							<i class="ki-outline ki-entrance-left fs-2 me-2"></i>Logout</a>
 						</div>
 					</div>
@@ -264,14 +264,14 @@
                 <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
                   <div class="text-dark order-2 order-md-1">
                     <span class="text-muted fw-semibold me-1">2023&copy;</span>
-                    <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+                    <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">BloodConnect Team</a>
                   </div>
                   <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
                     <li class="menu-item">
-                      <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">Panduan Pengguna</a>
+                      <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">User Guide</a>
                     </li>
                     <li class="menu-item">
-                      <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Kebijakan Privasi</a>
+                      <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Privacy Policy</a>
                     </li>
                   </ul>
                 </div>

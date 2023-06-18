@@ -39,6 +39,11 @@ class RequestController extends Controller
 
     public function approve($id)
     {
+        $user = DB::table('requests')->where('id_requests', $id)->first();
+        DB::table('notifications')->insert([
+            'message' => 'Permintaan anda telah berhasil diverifikasi.',
+            'user_id' => $user->user_id
+        ]);
         DB::table('requests')->where('id_requests', $id)->update([
             'requests_status' => '1',
         ]);
