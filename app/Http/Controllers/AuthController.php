@@ -42,7 +42,7 @@ class AuthController extends Controller
         if($cek == null){
             return redirect()->back()->withErrors(['email' => 'Invalid email or password.']);
         }else{
-            Http::post('https://api.bloodconnect.social/api/auth/forget', [
+            Http::post(env('API').'/api/auth/forget', [
                 'email' => $request->email,
             ]);
             return redirect()->back()->with('status','sukses');

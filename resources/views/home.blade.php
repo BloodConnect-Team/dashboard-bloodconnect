@@ -282,15 +282,15 @@
         
                                                     <div class="mx-auto">
                                                         <div class="d-flex align-items-center mb-2">
-                                                            <div class="bullet bullet-dot w-8px h-7px bg-success me-2"></div>
+                                                            <div class="bullet bullet-dot w-8px h-7px bg-info me-2"></div>
                                                             <div class="fs-8 fw-semibold text-muted">A+</div>
                                                         </div>
                                                         <div class="d-flex align-items-center mb-2">
-                                                            <div class="bullet bullet-dot w-8px h-7px bg-primary me-2"></div>
+                                                            <div class="bullet bullet-dot w-8px h-7px bg-success me-2"></div>
                                                             <div class="fs-8 fw-semibold text-muted">B+</div>
                                                         </div>
                                                         <div class="d-flex align-items-center mb-2">
-                                                            <div class="bullet bullet-dot w-8px h-7px bg-info me-2"></div>
+                                                            <div class="bullet bullet-dot w-8px h-7px bg-dark me-2"></div>
                                                             <div class="fs-8 fw-semibold text-muted">AB+</div>
                                                         </div>
                                                         <div class="d-flex align-items-center mb-2">
@@ -376,15 +376,15 @@
                                                     
                                                     <div class="mx-auto">
                                                         <div class="d-flex align-items-center mb-2">
-                                                            <div class="bullet bullet-dot w-8px h-7px bg-success me-2"></div>
+                                                            <div class="bullet bullet-dot w-8px h-7px bg-info me-2"></div>
                                                             <div class="fs-8 fw-semibold text-muted">A-</div>
                                                         </div>
                                                         <div class="d-flex align-items-center mb-2">
-                                                            <div class="bullet bullet-dot w-8px h-7px bg-primary me-2"></div>
+                                                            <div class="bullet bullet-dot w-8px h-7px bg-success me-2"></div>
                                                             <div class="fs-8 fw-semibold text-muted">B-</div>
                                                         </div>
                                                         <div class="d-flex align-items-center mb-2">
-                                                            <div class="bullet bullet-dot w-8px h-7px bg-info me-2"></div>
+                                                            <div class="bullet bullet-dot w-8px h-7px bg-dark me-2"></div>
                                                             <div class="fs-8 fw-semibold text-muted">AB-</div>
                                                         </div>
                                                         <div class="d-flex align-items-center mb-2">
@@ -407,3 +407,44 @@
     </div>
 </div>
 @endsection
+
+@section('script')
+<script>
+    var KTChartsWidget22 = (function () {
+    var e = function (e, t, a, l) {
+        var r = document.querySelector(t);
+        if (r) {
+            parseInt(KTUtil.css(r, "height"));
+            var o = {
+                    series: a,
+                    chart: { fontFamily: "inherit", type: "donut", width: 250 },
+                    plotOptions: { pie: { donut: { size: "50%", labels: { value: { fontSize: "10px" } } } } },
+                    colors: [KTUtil.getCssVariableValue("--bs-info"), KTUtil.getCssVariableValue("--bs-success"), KTUtil.getCssVariableValue("--bs-dark"), KTUtil.getCssVariableValue("--bs-danger")],
+                    stroke: { width: 0 },
+                    labels: ["A", "B", "AB", "O"],
+                    legend: { show: !1 },
+                    fill: { type: "false" },
+                },
+                i = new ApexCharts(r, o),
+                s = !1,
+                n = document.querySelector(e);
+            !0 === l && (i.render(), (s = !0)),
+                n.addEventListener("shown.bs.tab", function (e) {
+                    0 == s && (i.render(), (s = !0));
+                });
+        }
+    };
+    return {
+        init: function () {
+            e("#kt_chart_widgets_22_tab_1", "#kt_chart_widgets_22_chart_1", [{{$data['a_pos']}}, {{$data['b_pos']}}, {{$data['ab_pos']}}, {{$data['o_pos']}}], !0), 
+            e("#kt_chart_widgets_22_tab_2", "#kt_chart_widgets_22_chart_2", [{{$data['a_neg']}}, {{$data['b_neg']}}, {{$data['ab_neg']}}, {{$data['o_neg']}}], !1);
+        },
+    };
+})();
+"undefined" != typeof module && (module.exports = KTChartsWidget22),
+    KTUtil.onDOMContentLoaded(function () {
+        KTChartsWidget22.init();
+    });
+</script>
+@endsection
+

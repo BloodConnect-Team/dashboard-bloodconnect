@@ -37,10 +37,10 @@
 			<div class="d-flex flex-column flex-root" id="kt_app_root">
 				<style>body { background-image: url('{{ asset("assets/media/auth/bg10.jpeg") }}'); } [data-bs-theme="dark"] body { background-image: url('{{ asset("assets/media/auth/bg10-dark.jpeg") }}'); }</style>
 				<div class="d-flex flex-column flex-lg-row flex-column-fluid">
-					<div class="d-flex flex-lg-row-fluid">
-						<div class="d-flex flex-column flex-center pb-0 pb-lg-10 p-10 w-100">
-							<img class="theme-light-show mx-auto mw-100 w-150px w-lg-700px mb-10 mb-lg-20" src="{{ asset('assets/media/blood.png') }}" alt="" />
-							<img class="theme-dark-show mx-auto mw-100 w-150px w-lg-700px mb-10 mb-lg-20" src="{{ asset('assets/media/blood.png') }}" alt="" />
+					<div class="d-flex flex-lg-row-fluid ">
+						<div class="d-flex flex-column flex-center pb-0 pb-lg-10 p-10 w-100 ">
+							<img class="theme-light-show mx-auto mw-100 w-150px w-lg-700px mb-10 mb-lg-20 d-none d-sm-block" src="{{ asset('assets/media/blood.png') }}" alt="" />
+							<img class="theme-dark-show mx-auto mw-100 w-150px w-lg-700px mb-10 mb-lg-20 d-none d-sm-block" src="{{ asset('assets/media/blood.png') }}" alt="" />
 						</div>
 					</div>
 					<div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12">

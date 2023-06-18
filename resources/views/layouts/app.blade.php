@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head><base href="./"/>
-		<title>BloodConnect &mdash; {{$data['title']}}</title>
+		<title>BloodConnect &mdash; 
+		@if (empty($data['title']))
+				404
+		@else
+			{{$data['title']}}
+		@endif
+		</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="Dashboard for admin BloodConnect" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -62,9 +68,21 @@
 									<li class="breadcrumb-item">
 										<i class="ki-outline ki-right fs-7 text-gray-700 mx-n1"></i>
 									</li>
-									<li class="breadcrumb-item text-gray-600 fw-bold lh-1">{{$data['title']}}</li>
+									<li class="breadcrumb-item text-gray-600 fw-bold lh-1">
+										@if (empty($data['title']))
+										404
+										@else
+											{{$data['title']}}
+										@endif	
+									</li>
 								</ul>
-								<h1 class="text-gray-900 fw-bolder m-0">{{$data['title']}}</h1>
+								<h1 class="text-gray-900 fw-bolder m-0">
+									@if (empty($data['title']))
+									404
+									@else
+										{{$data['title']}}
+									@endif	
+								</h1>
 							</div>
 							<div class="d-flex align-items-center gap-2 gapl-lg-4">
 								<div class="m-0">
