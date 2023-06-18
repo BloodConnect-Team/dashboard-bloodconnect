@@ -348,13 +348,13 @@ ul.social li{
 			<tr>
 				<td>
 					<div class="text" style="padding: 0 2.5em; text-align: center;">
-						<h2>Reset Your Password</h2>
-						<h3>You are receiving this email because we received a password reset request for your account.</h3>
+						<h2>Congratulation !!</h2>
+						<h3>your request has been verified</h3>
 						<p>
-							<a href="{{ route('reset.password.get', $token) }}" class="btn btn-primary" style="color:#FF2156 !important;">Reset Password</a>
+							<a href="{{ env('WEB').'/link/'.$slug }}" class="btn btn-primary" style="color:#FF2156 !important;">View Request</a>
 						</p>
             <center>
-              <p>This password reset link will expire in 60 minutes.</p>
+              <p>Thanks for your enthusiasm <br>-BloodConnect</p>
             </center>
 					</div>
 				</td>
