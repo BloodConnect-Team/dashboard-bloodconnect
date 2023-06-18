@@ -26,7 +26,6 @@ Route::get('/', [AuthController::class, 'login'])->name('login')->middleware('gu
 Route::post('/submit', [AuthController::class, 'submit'])->name('submit')->middleware('guest');
 Route::get('/forgot', [AuthController::class, 'forgot'])->name('forgot')->middleware('guest');
 Route::post('/forgot/submit', [AuthController::class, 'submitForgot'])->name('forgot_submit')->middleware('guest');
-
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
