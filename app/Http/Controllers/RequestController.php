@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use App\Jobs\SendMailJob;
+use Illuminate\Support\Facades\Queue;
 
 class RequestController extends Controller
 {
@@ -43,11 +45,18 @@ class RequestController extends Controller
         $user = DB::table('requests')        
         ->join('users', 'requests.user_id', '=', 'users.id')
         ->where('id_requests', $id)->first();
-        // dd($user);
         Mail::send('email.verify', ['slug' => $user->requests_slug], function($message) use($user){
             $message->to($user->email);
             $message->subject('Notification');
         });
+
+        $send = DB::table('users')        
+        ->where('goldar', $user->requests_goldar)
+        ->get();
+        foreach ($send as $mail) {
+            SendMailJob::dispatch($mail->email, $user->requests_slug);
+        }
+
         DB::table('notifications')->insert([
             'message' => 'Permintaan anda telah berhasil diverifikasi.',
             'user_id' => $user->user_id
