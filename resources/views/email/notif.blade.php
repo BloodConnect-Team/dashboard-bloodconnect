@@ -348,7 +348,7 @@ ul.social li{
 			<tr>
 				<td>
 					<div class="text" style="padding: 0 2.5em; text-align: center;">
-						<h1>Notifikasi untuk anda !!</h1>
+						<h1>BANTU MEREKA !!</h1>
 						<h3>seorang pasien <br> Membutuhkan bantuan anda</h3>
 						<p>
 							<a href="{{ env('WEB').'/link/'.$slug }}" class="btn btn-primary" style="color:#FF2156 !important;">Lihat Permintaan</a>

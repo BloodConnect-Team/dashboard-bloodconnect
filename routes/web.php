@@ -8,6 +8,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\RequestController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\JadwalMUController;
 use App\Http\Controllers\BloodStockController;
 
@@ -33,6 +34,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware(
 
 Route::get('/request/pending', [RequestController::class, 'pending'])->name('pending')->middleware('auth');
 Route::get('/request/show', [RequestController::class, 'show'])->name('show')->middleware('auth');
+Route::get('/request/finish', [RequestController::class, 'finish'])->name('finish')->middleware('auth');
 Route::get('/request/delete/{id}', [RequestController::class, 'delete'])->name('pending_delete')->middleware('auth');
 Route::get('/request/approve/{id}', [RequestController::class, 'approve'])->name('pending_approve')->middleware('auth');
 
@@ -64,4 +66,8 @@ Route::post('/account/change', [AccountController::class, 'password_change'])->n
 Route::get('/user', [UserController::class, 'index'])->name('user')->middleware('auth');
 Route::post('/user/update', [UserController::class, 'update'])->name('user_update')->middleware('auth');
 Route::get('/user/delete/{id}', [UserController::class, 'delete'])->name('user_delete')->middleware('auth');
+
+Route::get('/setting', [SettingController::class, 'index'])->name('setting')->middleware('auth');
+Route::post('/setting/update', [SettingController::class, 'update'])->name('setting_update')->middleware('auth');
+
 

@@ -10,7 +10,10 @@ class UserController extends Controller
     public function index()
     {
         $data['title'] = 'User';
-        $data['user'] = DB::table('users')->get();
+        $data['user'] = DB::table('users')
+        ->where('role', '=', '1')
+        ->orwhere('role', '=', '0')
+        ->get();
         return view('user', compact('data'));
     }
 

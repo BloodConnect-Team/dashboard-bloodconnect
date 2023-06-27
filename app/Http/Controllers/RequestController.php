@@ -34,6 +34,19 @@ class RequestController extends Controller
         return view('show', compact('data'));
     }
 
+    public function finish()
+    {
+        $data['title'] = 'Blood Requst';
+        $data['req'] = DB::table('requests')
+        ->join('bdrs', 'requests.bdrs_id', '=', 'bdrs.id_bdrs')
+        ->join('users', 'requests.user_id', '=', 'users.id')
+        ->where('requests_status', '=', '2')
+        ->limit(20)
+        ->orderBy('requests_waktu', 'DESC')
+        ->get();
+        return view('finish', compact('data'));
+    }
+
     public function delete($id)
     {
         DB::table('requests')->where('id_requests', $id)->delete();
