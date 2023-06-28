@@ -20,7 +20,7 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
         $cek = User::where('email', $request->email)->first();
-        if($cek->role == "1"){
+        if($cek->role == "1" OR $cek->role == "2"){
             if (Auth::attempt($credentials)) {
                 return redirect()->intended('/home');
             }else{

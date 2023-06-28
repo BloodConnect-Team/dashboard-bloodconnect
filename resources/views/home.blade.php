@@ -178,7 +178,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-footer p-0 border-0 d-flex my-auto">
-                                                <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
+                                                <a href="{{ route('finish') }}" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
                                                     <i class="ki-outline ki-arrow-right fs-2"></i>                                
                                                 </a>                                    
                                             </div>

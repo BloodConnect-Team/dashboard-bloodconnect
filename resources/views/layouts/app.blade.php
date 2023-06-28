@@ -152,7 +152,7 @@
 											<span class="menu-title">Home</span>
 										</a>
 									</div>
-									<div data-kt-menu-trigger="click" class="menu-item menu-accordion <?php if((route('pending')  == url()->full()) OR (route('show')  == url()->full())){ echo'here show'; } ?>">
+									<div data-kt-menu-trigger="click" class="menu-item menu-accordion <?php if((route('pending')  == url()->full()) OR (route('show')  == url()->full()) OR (route('finish')  == url()->full())){ echo'here show'; } ?>">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<i class="ki-outline ki-pulse fs-2"></i>
@@ -175,6 +175,14 @@
 														<span class="bullet bullet-dot"></span>
 													</span>
 													<span class="menu-title">Show</span>
+												</span>
+											</a>
+											<a href="{{ route('finish') }}" class="menu-item menu-accordion <?php if(route('finish')  == url()->full()){ echo'here show'; } ?>">
+												<span class="menu-link">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+													<span class="menu-title">Finish</span>
 												</span>
 											</a>
 										</div>
@@ -238,6 +246,16 @@
 											<span class="menu-title">Users</span>
 										</a>
 									</div>
+									@if (Auth::user()->role == '2')
+									<div class="menu-item <?php if(route('setting')  == url()->full()){ echo'here show'; } ?>">
+										<a href="{{ route('setting') }}" class="menu-link">
+											<span class="menu-icon">
+												<i class="ki-outline ki-gear fs-2"></i>
+											</span>
+											<span class="menu-title">Setting</span>
+										</a>
+									</div>
+									@endif
 								</div>
 							</div>
 						</div>
@@ -286,10 +304,10 @@
                   </div>
                   <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
                     <li class="menu-item">
-                      <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">User Guide</a>
+                      <a href="http://bloodconnect.social/panduan-pengguna" target="_blank" class="menu-link px-2">User Guide</a>
                     </li>
                     <li class="menu-item">
-                      <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Privacy Policy</a>
+                      <a href="http://bloodconnect.social/kebijakan-privasi" target="_blank" class="menu-link px-2">Privacy Policy</a>
                     </li>
                   </ul>
                 </div>

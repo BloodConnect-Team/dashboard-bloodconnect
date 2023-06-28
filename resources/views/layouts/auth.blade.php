@@ -53,8 +53,8 @@
 								</div>
 									<div class="d-flex flex-stack justify-content-center text-center">
 										<div class="d-flex justify-content-center text-center fw-semibold text-primary fs-base gap-5">
-											<a class="text-danger" href="../../demo29/dist/pages/team.html" target="_blank">User Guide</a>
-											<a class="text-danger" href="../../demo29/dist/pages/pricing/column.html" target="_blank">Privacy Policy</a>
+											<a class="text-danger" href="http://bloodconnect.social/panduan-pengguna" target="_blank">User Guide</a>
+											<a class="text-danger" href="http://bloodconnect.social/kebijakan-privasi" target="_blank">Privacy Policy</a>
 										</div>
 									</div>
 								</div>
